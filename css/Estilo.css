@@ -1,0 +1,119 @@
+/* Estilos generales */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #070707; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    font-family: ;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #f5eeff;
+    text-shadow: 2px 2px 20px rgba(255, 15, 229, 0.5);
+}
+
+/* Estilos para el área de juego */
+#juego {
+    position: relative;
+    width: 80vw;
+    height: 60vh;
+    background-color: #181818; /* Fondo oscuro */
+    border: 2px solid;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5); /* Sombra para resaltar el área de juego */
+    animation: cambioColores 10s infinite linear; /* Animación para cambiar los colores del borde */
+}
+
+/* Animación para cambiar los colores del borde */
+@keyframes cambioColores {
+    0% {
+        border-color: #ff69b4; /* Rosa neón */
+        box-shadow: 0 0 10px rgba(255, 105, 180, 0.5); /* Sombra inicial */
+    }
+    25% {
+        border-color: #8a2be2; /* Azul violeta */
+        box-shadow: 0 0 10px rgba(138, 43, 226, 0.5); /* Sombra actualizada */
+    }
+    50% {
+        border-color: #00bfff; /* Azul cielo */
+        box-shadow: 0 0 10px rgba(0, 191, 255, 0.5); /* Sombra actualizada */
+    }
+    75% {
+        border-color: #ff6347; /* Rojo coral */
+        box-shadow: 0 0 10px rgba(255, 99, 71, 0.5); /* Sombra actualizada */
+    }
+    100% {
+        border-color: #ff69b4; /* Volver al rosa inicial */
+        box-shadow: 0 0 10px rgba(255, 105, 180, 0.5); /* Sombra inicial */
+    }
+}
+
+/* Estilos para el corazón */
+#corazon {
+    position: absolute;
+    width: 62px;
+    height: 52px;
+    background-image: url('../img/corazon.png');
+    background-size: cover;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.5s ease;
+    animation: latido 1s infinite alternate, cambioColoresCorazon 10s infinite linear;
+    filter: brightness(120%) saturate(200%); /* Ajustes para el efecto neon */
+    /* Eliminamos el box-shadow inicial */
+}
+
+
+
+/* Animación para cambiar los colores del corazón */
+@keyframes cambioColoresCorazon {
+    0% {
+        box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4;
+    }
+    25% {
+        box-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2, 0 0 30px #8a2be2, 0 0 40px #8a2be2;
+    }
+    50% {
+        box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff, 0 0 40px #00bfff;
+    }
+    75% {
+        box-shadow: 0 0 10px #ff6347, 0 0 20px #ff6347, 0 0 30px #ff6347, 0 0 40px #ff6347;
+    }
+    100% {
+        box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4, 0 0 40px #ff69b4;
+    }
+}
+
+
+/* Animación de latido */
+@keyframes latido {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+/* Estilos para la puntuación */
+#puntuacion {
+    margin-top: 10px;
+    font-size: 50px;
+    color: #00e6ff;
+    text-align: center;
+    text-shadow: 2px 1px 10px rgba(20, 255, 255, 0.5);
+}
+
+/* Estilos para los mensajes */
+#mensaje {
+    margin-top: 10px;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 2px 1px 10px rgba(255, 255, 255, 0.5);
+}
